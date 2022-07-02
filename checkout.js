@@ -12,17 +12,16 @@ class Shop {
     let total = 0 + this.deals(itemArray);
 
     itemArray.forEach((item) => {
-      console.log(items[item])
-      total += parseInt(items[item])
+      total += items[item]
     });
-    
+
     return total;
   };
 
   deals(items) {
     let reduction = 0;
-    let numberOfAs = items.filter((item) => item === "A").length;
-    let numberOfBs = items.filter((item) => item === "B").length;
+    const numberOfAs = items.filter((item) => item === "A").length;
+    const numberOfBs = items.filter((item) => item === "B").length;
     if (numberOfAs >= 3) {
       reduction -= 20 * Math.floor(numberOfAs/3);
     }
